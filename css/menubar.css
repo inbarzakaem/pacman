@@ -1,0 +1,37 @@
+
+.navbar
+{
+    color: white;
+    display: flex;
+    justify-content:left;
+    font-size: 2.5vh;
+}
+
+
+.menubar
+{
+    padding: 0;
+    margin: 0;
+}
+
+.menubar a
+{
+    padding-right: 3vh;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+}
+
+.menubar a:hover
+{
+    background-color: #ddd;
+    color: black;
+}
+
+#icon
+{
+    margin-right: 5vh;
+    font-size: 5vh;
+}
+

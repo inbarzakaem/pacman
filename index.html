@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" href="./css/menubar.css">
+		<script src="./js/jquery-3.4.1.slim.min.js"></script>
+		<link rel="icon" type="Images/jpg" href="./Images/logo4.jpg" >
+
+		
+		<!-- Model jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> 
+
+
+		<script type="text/javascript" src="./js/app.js"></script>
+		<script type="text/javascript" src="./js/gameDB.js"></script>
+		<script type="text/javascript" src="./js/validation.js"></script>
+		<script type="text/javascript" src="./js/ghost.js"></script>
+		<script type="text/javascript" src="./js/pages.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+		<!-- app logo imoji -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.css">  
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css">  
+
+	</head>
+
+	<body>
+		<header>
+			<!-- need to add submiters details -->
+			<title>Avichai & Inbar & Shahar - Pacman</title>
+
+		</header>
+		<nav class="navbar">
+			<menu class="menubar">
+				<i class="fa-solid fa-ghost" id="icon"></i>
+				<a href="#welcome" onclick="Welcome()">Walcome</a>
+				<a href="#register" onclick="Register()">Register</a>
+				<a href="#login" onclick="Login()">Login</a>
+				<a href="#about"  class="dialog"  onclick="About()">About</a>
+			</menu>
+		</nav>
+		<div id="content">
+			<div class="screen" id="welcome_menu">
+				<form id="menu_form">
+					<h1>Welcome to pacman game</h1>
+
+					<button type="button" onclick="Register()">
+						Register
+					</button>
+					<br>
+					<button type="button" onclick="Login()">
+						Login
+					</button>
+					<br>
+					<button type="button"  class="dialog"  onclick="About()">
+						About
+					</button>
+				</form>
+			</div>
+
+			<div class="screen" id="register_menu">
+				<form id= "register_form" action="" method="post" novalidate="novalidate">
+					<h1>Registeration</h1>
+					<label for="reg_username"><b>Username:</b></label>
+					<input type="text" name="reg_username" id="reg_username" placeholder="Choose your username">
+					<br>
+					<label for="reg_password"><b>Password:</b></label>
+					<input type="password" name="reg_password" id="reg_password" placeholder="Choose your password" checkPassword="checkPassword">
+					<br>
+					<label for="first_name"><b>First name:</b></label>
+					<input type="text" name="first_name" id="first_name" placeholder="Enter your first name" checkName="checkName">
+					<br>
+					<label for="last_name"><b>Last name:</b></label>
+					<input type="text" name="last_name" id="last_name" placeholder="Enter your last name" checkName="checkName">
+					<br>
+					<label for="email"><b>Email:</b></label>
+					<input type="email" name="email" id="email" placeholder="Enter your email">
+					<br>
+					<label for="date"><b>Date:</b></label>
+					<input type="date" name="date" id="date" placeholder="Enter your birthdate">
+					<br>
+					<button type="submit" >OK</button>
+					<button type="button" onclick="Welcome()">return to menu</button>
+				</form>
+			</div>
+
+			<div class="screen" id="login_menu">
+				<form id="login_form" action="" method="post" novalidate="novalidate">
+					<h1>Login</h1>
+					<label for="username"><b>username:</b></label>
+					<input type="text" name="username" id="username" placeholder="Enter your username">
+					<br>
+					<label for="password"><b>password:</b></label>
+					<input type="password" name="password" id="password" placeholder="Enter your password">
+					<br>
+					<button type="submit">OK</button>
+					<button type="button" onclick="Welcome()">return to menu</button>
+				</form>
+			</div>
+			
+			<div class="screen" id="after_login">
+				<form id="after_login_form" action="" method="post">
+					<h1 id="userToPut"></h1>
+					<button type="button" onclick="Game_page()">Game</button>
+					<br>
+					<button type="button" onclick="Setting()">Setting</button>
+					<br>
+					<button type="button" onclick="Logout()">logout</button>
+					<br>
+					<button type="button"  class="dialog" onclick="About()">about</button>
+				</form>
+			</div>
+			<div class="screen" id="setting_menu">
+				<form id="setting_menu_form">
+					<h1>Setting</h1>
+					UP: 
+					<button id="up_button" type="button" onclick="UpButton()"></button>
+					<br>
+					DOWN:
+					<button id="down_button" type="button" onclick="DownButton()"></button>
+					<br>
+					RIGHT:
+					<button id="right_button" type="button" onclick="RightButton()"></button>
+					<br>
+					LEFT:
+					<button id="left_button"type="button" onclick="LeftButton()"></button>
+					<br>
+
+					<label for="game_food">Game food:</label>
+					<input type="text" id="game_food" name="game_food" placeholder="Choose between 50-90">
+					<br>
+					<label for="ball1_color">Ball 1: </label>
+					<input type="color" id="ball1_color" name="ball1_color">
+					<br>
+					<label for="ball2_color">Ball 2: </label>
+					<input type="color" id="ball2_color" name="ball2_color">
+					<br>
+					<label for="ball3_color">Ball 3: </label>
+					<input type="color" id="ball3_color" name="ball3_color" value="">
+					<br>
+					<label for="game_time">Game time: </label>
+					<input type="text" id="game_time" name="game_time" placeholder="number greater\equal to 60">
+					<br>
+					<label for="monster_number">Monster's number: </label>
+					<input type="text" id="monster_number" name="monster_number"placeholder="Choose between 1-4">
+					<br>
+					<button type="button" onclick="RandomSetting()">Random Setting</button>
+					<button type="button" onclick="ResetSetting()">Reset Setting</button>
+					<br>
+					<button type="submit">Save Setting</button>
+					<button type="button" onclick="Welcome()">Return to menu</button>
+				</form>
+			</div>
+			<!-- need to update text -->
+			<div class="screen" id="about_menu" dir = "rtl">
+
+				<p>
+					<b> מגישים: </b>
+					<br>
+					שחר חדד ,אביחי אדרי וענבר זכאים
+					<br>
+					<b> jQuery Plugin</b>
+					<br>
+					השתמשנו בפונקציה -  dialog על מנת לייצר את החלון המודולרי 
+					<br>
+					<b>קשיים:</b>
+					<br>
+					1. התוכנה לא מספקת פידבק של שגיאות ולא ניתן לבצע דיבאג בקלות
+					<br>
+					2. בנוסף התקשנו בפונקצינאליות של ה-about בשלב שבו היה צריך לצאת מהחלון ע"י לחיצה מחוץ לחלון
+					<br>
+				</p>
+			</div>
+
+			<div class="screen" id="game_page">
+				<div class="left_box">
+					<div id="score"> 
+						<label for="lblScore">SCORE:</label>
+						<input id="lblScore" type="text" readonly/>
+					</div>
+					<br>
+					<div id="time">
+						<label for="lblTime">TIME:</label>
+						<input id="lblTime" type="text" maxlength="4" readonly/>
+					</div>
+					<br>
+					<div id="strikes"> 
+						<label for="lblstrikes">LIVES:</label>
+						<input id="lblstrikes" type="text" readonly/>
+					</div>
+				</div>
+				<div  class="middle_box" id="game"> 
+					<h2 id="userToPut2"></h2>
+					<canvas id="canvas" height="900" width="900"></canvas>
+					<br>
+					<button type="button" onclick="GameExit()">Exit</button>
+					<button type="button" onclick="NewGame()">New game</button>
+				</div>
+				<div  class="right_box" id="setting_info"> 
+					<form action="">
+						<label for="up_arrow">&uarr;</label>
+						<input type="text" id="up_arrow" readonly>
+						<br>
+						<label for="down_arrow">&darr;</label>
+						<input type="text" id="down_arrow" readonly>
+						<br>
+						<label for="right_arrow">&rarr;</label>
+						<input type="text" id="right_arrow" readonly>
+						<br>
+						<label for="left_arrow">&larr;</label>
+						<input type="text" id="left_arrow" readonly>
+						<br>
+						<label for="food1_color">food1</label>
+						<input type="color" id="food1_color" disabled>
+						<input type="text" id="food1_points" value="5 points" readonly>
+						<br>
+						<label for="food2_color">food2</label>
+						<input type="color" id="food2_color" disabled>
+						<input type="text" id="food2_points" value="15 points" readonly>
+						<br>
+						<label for="food3_color">food3</label>
+						<input type="color" id="food3_color" disabled>
+						<input type="text" id="food3_points" value="25 points" readonly>
+						<br>
+						<label for="food_amount">Food amount</label>
+						<input type="text" id="food_amount" readonly>
+						<br>
+						<label for="time_count">Counter</label>
+						<input type="text" id="time_count" readonly>
+						<br>
+						<label for="monsters_amount">Monster's number</label>
+						<input type="text" id="monsters_amount" readonly>
+						<br>
+					</form>
+				</div>
+			</div>
+				
+		</div>
+		<footer>
+			avichaie@post.bgu.ac.il, hshah@post.bgu.ac.il, inbarza@post.bgu.ac.il.
+		</footer>
+		<script>
+			
+		</script>
+	</body>
+</html>

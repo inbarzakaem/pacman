@@ -1,0 +1,257 @@
+/* @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700"); */
+
+
+body
+{
+    background-color: white;
+    background-repeat: no-repeat;
+    background-image: url("../Images/pacman8.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    text-align: center;
+    color: white;
+}
+
+
+
+#canvas
+{
+
+    width: 100vh;
+    height: 70vh;
+    background-image: url("../Images/navy.jpg");
+}
+
+footer
+{
+    position: fixed;
+    padding: 1vh 1vh 1vh 1vh;
+    bottom: 0;
+    width: 100%;
+    margin-left: 15vh;
+    font-size: 2vh;
+}
+
+
+
+
+/* welcome menu */
+#welcome_menu
+{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    padding-bottom: 5vh;
+    margin-left: 75vh;
+    margin-right: 60vh;
+}
+
+#menu_form
+{
+    display: inline-block;
+}
+
+
+#menu_form button
+{
+    width: 15vh;
+    height: 4vh;
+    margin-bottom: 1vh;
+}
+
+#menu_form button:hover
+{
+    background-color: aqua;
+}
+
+#menu_form h2
+{
+    margin-top: -1.5vh;
+}
+
+/* register menu*/
+#register_menu
+{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    padding-bottom: 5vh;
+    margin-left: 75vh;
+    margin-right: 60vh;
+}
+
+#register_form input
+{
+    font-size: 3vh;
+    margin-bottom: 1vh;
+    width: 32vh;
+}
+
+#register_form label
+{
+    font-size: 3vh;
+}
+
+#register_form button
+{
+    font-size: 2vh;
+    margin-left: 2vh;
+    margin-top: 3vh;
+}
+
+
+/* login menu*/
+#login_menu
+{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    padding-bottom: 5vh;
+    margin-left: 75vh;
+    margin-right: 60vh;
+    
+}
+
+#login_menu input
+{
+    font-size: 3vh;
+    margin-bottom: 1vh;
+}
+
+#login_menu label
+{
+    font-size: 3vh;
+}
+
+#login_menu button
+{
+    font-size: 2vh;
+    margin-left: 2vh;
+    margin-top: 3vh;
+}
+
+
+
+/* after login menu */
+#after_login
+{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    padding-bottom: 5vh;
+    margin-left: 75vh;
+    margin-right: 60vh;
+}
+
+#after_login_form
+{
+    display: inline-block;
+}
+
+
+#after_login_form button
+{
+    width: 15vh;
+    height: 4vh;
+    margin-bottom: 1vh;
+}
+
+#after_login_form button:hover
+{
+    background-color: aqua;
+}
+
+#after_login_form h2
+{
+    margin-top: -1.5vh;
+}
+
+
+
+/* setting menu */
+#setting_menu
+{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    padding-bottom: 5vh;
+    margin-left: 75vh;
+    margin-right: 60vh;
+}
+
+#setting_menu_form
+{
+    display: inline-block;
+    
+}
+
+
+#setting_menu_form button
+{
+    width: 15vh;
+    height: 4vh;
+    margin-bottom: 1vh;
+    margin-left: 2vh;
+}
+
+#setting_menu_form button:hover
+{
+    background-color: aqua;
+}
+
+#setting_menu_form h2
+{
+    margin-top: -1.5vh;
+}
+
+#setting_menu_form input
+{
+    height: 3vh;
+    width: 15vh;
+    margin-left: 2vh;
+    margin-bottom: 1vh;
+}
+
+/* Game page */
+
+#game_page
+{
+    display: flex;
+    font-size: 3vh;
+}
+
+#game_page input
+{
+    height: 3vh;
+    width: 15vh;
+    margin-left: 2vh;
+    margin-bottom: 1vh;
+}
+
+#game_page button
+{
+    width: 15vh;
+    height: 4vh;
+    margin-bottom: 1vh;
+    margin-left: 2vh;
+}
+
+
+
+.left_box {
+    display: flexbox;
+    margin-right: 1vh;
+    margin-left: 20vh;
+    margin-top: 10vh;
+}
+.middle_box{
+    display: flexbox;
+    margin-right: 1vh;
+}
+.right_box{
+    display: flexbox;
+    margin-top: 10vh;
+}
+
+#userToPut2
+{
+    font-size: 4vh;
+    margin-bottom: 0;
+}
+
